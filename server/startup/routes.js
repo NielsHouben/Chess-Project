@@ -10,7 +10,7 @@ const history = require('connect-history-api-fallback');
 const enforce = require('express-sslify');*/
 
 const cookieParser = require('cookie-parser');
-const home = require('../routes/api/home');
+const session = require('../routes/api/session');
 const error = require('../middleware/error');
 
 module.exports = function(app) {
@@ -32,7 +32,7 @@ module.exports = function(app) {
   //app.use(serveStatic(path.dirname(require.main.filename)));
   //app.use(history());
 
-  app.use('/api/home', home);
+  app.use('/api/session', session)
 
   app.use(error);
 }
