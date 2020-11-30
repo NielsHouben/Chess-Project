@@ -9,7 +9,6 @@
         </div>
       </div>
     </div>
-    <h1>{{ state.board }}</h1>
   </div>
 </template>
 
@@ -44,11 +43,11 @@ export default {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   .square {
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
 
     img {
       width: 100%;
@@ -58,10 +57,12 @@ export default {
 }
 
 .green {
-  background-color: #769656;
+  // background-color: #769656;
+  background-color: #51a100;
 }
 .whiteish {
-  background-color: #eeeed2;
+  // background-color: #eeeed2;
+  background-color: #ffffff;
 }
 h1 {
   font-size: 20px;

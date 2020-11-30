@@ -17,9 +17,10 @@ export default {
 
     const router = useRouter();
     async function requestSession() {
-      const req = await axios.post("/api/session", {});
-      const sessionId = req.data.id;
-      router.push({ path: "/game/", query: { Id: sessionId } });
+      const req = await axios.get("/api/session/create", {});
+      const sessionId = req.data._id;
+
+      router.push({ path: "/game/", query: { sessionId: sessionId } });
     }
 
     return {
