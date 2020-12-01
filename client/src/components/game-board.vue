@@ -38,33 +38,33 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.gameBoard {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 800px;
-  height: 800px;
-  .square {
-    width: 100px;
-    height: 100px;
+<style lang="sass" scoped>
+.gameBoard
+  display: grid
+  grid-template-columns: repeat(8, 1fr)
+  grid-template-rows: repeat(8, 1fr)
+  width: 100%
+  height: 100%
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
+  .square
+    // width: 100%
+    // height: 100%
 
-.green {
-  // background-color: #769656;
-  background-color: #51a100;
-}
-.whiteish {
-  // background-color: #eeeed2;
-  background-color: #ffffff;
-}
-h1 {
-  font-size: 20px;
-}
+    width: 100%
+    height: 0
+    padding-top: 100%
+    img
+      position: absolute
+      width: 100%
+      height: 100%
+      // filter: invert(100%)
+
+.green
+  background-color: #0042ac
+
+.whiteish
+  background-color: #dcdcdc
+
+h1
+  font-size: 20px
 </style>

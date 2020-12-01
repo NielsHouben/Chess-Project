@@ -1,6 +1,6 @@
 <template>
   <div>
-    <gameBoardComponent :board="state.board"></gameBoardComponent>
+    <gameBoardComponent :board="state.board" id="game-board"></gameBoardComponent>
   </div>
 </template>
 
@@ -27,24 +27,14 @@ export default {
     });
 
     onMounted(() => {
-      console.log("component is mounted!");
-      // const route = useRoute();
-      // state.sessionId = route.query.sessionId;
       const route = useRoute();
       sessionId = route.query.sessionId;
       getBoard();
     });
 
-    // async function getBoard() {
-    //   const req = await axios.get(`/api/session/${sessionId}`, {});
-
-    //   state.board = req.data.board;
-    //   setTimeout(() => {
-    //     getBoard();
-    //   }, 0);
-    //   //getBoard();
-    // }
-
+    //code below basically makes an infinit loop (stoppable by making fetchGa... false)
+    //cant be a recursive function, would brake. has timer to stop the while loop for delay.
+    //requests the session from server, gets the session and buts its board into board variable.
     const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
     async function getBoard() {
@@ -66,3 +56,15 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+#game-board
+  position: absolute
+  left: 50%
+  top: 50%
+  height: 600px
+  width: 600px
+  // height: 90vh
+  // width: 90vh
+  transform: translate(-50%, -50%)
+</style>
