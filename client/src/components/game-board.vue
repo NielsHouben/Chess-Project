@@ -40,24 +40,35 @@ export default {
 
 <style lang="sass" scoped>
 .gameBoard
+  position: relative
   display: grid
   grid-template-columns: repeat(8, 1fr)
   grid-template-rows: repeat(8, 1fr)
+
   width: 100%
   height: 100%
 
   .square
     // width: 100%
     // height: 100%
-
+    position: relative
     width: 100%
-    height: 0
-    padding-top: 100%
+    height: 100%
+    padding: 0
+    // filter: invert(100%)
     img
+      // background-size: cover
+      // width: 95%
+      // height: 94%
+      // background: no-repeat center<
+      // filter: invert(100%)
+
       position: absolute
       width: 100%
       height: 100%
-      // filter: invert(100%)
+      left: 0
+      top: 0
+
 
 .green
   background-color: #0042ac

@@ -62,9 +62,7 @@ export default {
   position: absolute
   left: 50%
   top: 50%
-  height: 600px
-  width: 600px
-  // height: 90vh
-  // width: 90vh
+  height: 90vmin
+  width: 90vmin
   transform: translate(-50%, -50%)
 </style>
