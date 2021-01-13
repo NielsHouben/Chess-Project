@@ -1,13 +1,13 @@
-const winston = require('winston');
+const winston = require('winston')
 
 module.exports = function () {
 
 
   const myconsole = new winston.transports.Console({
     format: winston.format.simple(),
-  });
+  })
 
-  winston.add(myconsole);
+  winston.add(myconsole)
 
 
 
