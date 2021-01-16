@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const cors = require('cors')
-// const morgan = require('morgan');
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 /*const serveStatic = require('serve-static');
@@ -19,7 +19,7 @@ module.exports = function (app) {
   }
 
   app.use(cors())
-  // app.use(morgan('tiny')); //prints requests
+  app.use(morgan('tiny')) //prints requests
   app.use(bodyParser.json())
 
   app.use(express.json())

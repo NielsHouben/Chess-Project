@@ -25,20 +25,26 @@ router.get('/:sessionId', async (req, res) => {
 })
 
 router.put('/:sessionId/:pos1/:pos2', async (req, res) => {
+  winston.info("---------------------------------------------------------------------------")
   const session = await Session.findById(req.params.sessionId)
   if (!session) return res.status(404).send('Session with the given ID was not found')
+  winston.info("found session")
+
+  winston.info(`${req.params.pos1} to ${req.params.pos2} received`)
 
   session.board[parseInt(req.params.pos2)] = session.board[parseInt(req.params.pos1)]
   session.board[parseInt(req.params.pos1)] = ""
+  winston.info("managed to build new board")
 
-  winston.info(`${req.params.pos1} to ${req.params.pos2}`)
 
   await Session.findByIdAndUpdate(req.params.sessionId,
     {
       board: session.board
     }, { new: true })
+  winston.info("uppdated db")
 
 
+  winston.info("---------------------------------------------------------------------------")
   // const session = await Session.findById(req.params.sessionId)
 
   // if (!session) return res.status(404).send('Session with the given ID was not found')

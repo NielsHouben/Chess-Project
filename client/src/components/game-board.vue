@@ -51,14 +51,14 @@ export default {
 
       if (piece) {
         //make it active piece, and make function to hide active piece with a watcher, that way, it wil stay hidden untill move confirmed or denied
-        state.activePiece.isActive = true;
+        // state.activePiece.isActive = true;
         state.activePiece.pos = index;
         state.activePiece.piece = piece;
       } else {
         axios.put(`/api/session/${sessionId}/${state.activePiece.pos}/${index}`, {});
-        state.activePiece.isActive = false;
-        state.activePiece.pos = Number;
-        state.activePiece.piece = String;
+        // state.activePiece.isActive = false;
+        // state.activePiece.pos = Number;
+        // state.activePiece.piece = String;
       }
     }
 
@@ -82,13 +82,15 @@ export default {
 
     async function getBoard() {
       // We need to wrap the loop into an async function for this to work
+
       while (state.costantlyTrue) {
         const req = await axios.get(`/api/session/${sessionId}`, {});
+        console.log(req);
         state.board = req.data.board;
 
         // await timer(100); // then the created Promise can be awaited
         // await new Promise((r) => setTimeout(r, 100));
-        await new Promise((r) => setTimeout(r, 10));
+        await new Promise((r) => setTimeout(r, 50));
       }
     }
     //----------------------------------------------------------------
