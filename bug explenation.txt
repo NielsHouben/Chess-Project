@@ -1,0 +1,14 @@
+So this is about fighting time travel and closing a blcak hole.
+
+basically multiplayer works, can move pieces and that live updates on all instances.
+
+But after 6 moves total, dont matter wherefrom they were, but after 6 moves: none of the instances gets an update
+
+about 2 min later, everytime about 2min later: it works normally again with a few failed requests (500) response
+
+
+and then the whole process repeats if u make 6 moves.
+
+I can't solve it now so I'll just try to merge the two reqests making the spammed request that always requests the board also retain info about which pice is selected and which move the player wants to make.
+
+that will enable the server to also return with not only the board but also with info about legal moves, aswell as updating the board if the server validates it. (the server would only need one validation funktion.)
